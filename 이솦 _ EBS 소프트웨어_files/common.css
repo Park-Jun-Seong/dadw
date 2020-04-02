@@ -1,0 +1,644 @@
+@charset "utf-8";
+
+#skipnavigation{overflow:hidden;position:relative;width:100%;z-index:999;}
+#skipnavigation a{display:block;font-size:0;line-height:0;white-space:nowrap;width:100%;}
+#skipnavigation a:hover, #skipnavigation a:focus, #skipnavigation a:active{background:#7232d8;color:#fff;font-size:12px;padding:8px 15px;text-align:center;line-height:1;}
+	
+#wrap { position:relative }
+.container { max-width:1280px; margin:0 auto; position:relative; padding:0 10px }
+#header { position:relative; border-bottom:1px solid #e8e8e8 }
+#header .top, 
+#header .container { max-width:1280px; margin:0 auto }
+#header > .container { position:static }
+.top_most {display: block; padding: 5px 0; color: #959595;font-size: 14px; text-align: center; background-color: #f1f1f3; border-bottom:1px solid #e1e1e1;} 
+/* #header .top_most {display: block; padding: 5px 0; color: #959595;font-size: 14px; text-align: center; background-color: #f1f1f3; border-bottom:1px solid #e1e1e1;} header 최상단 */
+#header .top { margin-top:15px }
+#header .top .alarm { width:26px; height:30px; float:left; padding-top:3px; position:relative; }
+#header .top .alarm > a > i { color:#000; font-size:30px }
+#header .top .alarm > a > em { color:#fff; display:block; position:absolute; top:0; right:-2px; background:#7232d8; font-family:'Arial'; font-size:8px; font-weight:bold; border-radius:50%; width:15px; height:15px; text-align:center; line-height:15px }
+
+#header .top .my_menu { position:relative; float:left; margin-left:18px; width:52px; padding-bottom:15px }
+#header .top .my_menu > a { border-radius:50px; display:block; width:32px; height:32px; background:#d2d2d2; text-align:center }
+#header .top .my_menu > a:after { content:''; position:absolute; right:0px; top:13px; width:12px; height:7px; background:url('../../../../../images/egovframework/com/ebs/common/iconx4.png') -24px -128px no-repeat; display:inline-block; vertical-align:-2px; background-size:150px 150px }
+#header .top .my_menu .my_menu_lst { position:absolute; top:0; width:204px; left:50%; margin-left:-102px; background:#fff; border:1px solid #e7e7e7; z-index:-1; opacity:0; transform:translateY(65px); -webkit-transform:translateY(65px); -webkit-transition:all 0.35s ease; transition:all 0.35s ease; visibility:hidden }
+#header .top .my_menu .my_menu_lst:before { content:''; background:url('../../../../../images/egovframework/com/ebs/common/depth2_before.png') no-repeat; position:absolute; left:46%; top:-9px; width:18px; height:10px; z-index:33 }
+#header .top .my_menu.active> a + .my_menu_lst { transform:translateY(47px); -webkit-transform:translateY(47px); opacity:1; visibility:visible; z-index:130; margin-left:-102px } 
+
+#header .top .my_menu .my_menu_lst .my_admin { padding:20px 20px 10px; border-bottom:1px solid #e7e7e7 }
+#header .top .my_menu .my_menu_lst .my_admin .thumb { width:50px; height:50px; border-radius:50%; background:#d2d2d2; position:relative; margin-right:20px; text-align:center }
+#header .top .my_menu .my_menu_lst .my_admin .thumb .find { width:20px; height:20px; display:block; border-radius:50%; border:1px solid #7232d8; background:#fff; z-index:5; position:absolute; bottom:0; right:-4px; text-align:center }
+#header .top .my_menu .my_menu_lst .my_admin .thumb .find > i { font-size:14px; vertical-align:top; margin-left:2px;margin-top: 1px;}
+#header .top .my_menu .my_menu_lst .my_admin .name { font-size:15px; font-weight:500; padding-top:6px; line-height:20px }
+#header .top .my_menu .my_menu_lst .my_admin .name .nickname { display:block; font-size:14px; font-weight:400 }
+#header .top .my_menu .my_menu_lst .admin_menu { padding:6px 0 }
+#header .top .my_menu .my_menu_lst .admin_menu > li { padding:7px 0; text-align:center }
+#header .top .my_menu .my_menu_lst .admin_menu > li > a { color:#000 }
+#header .top .my_menu .my_menu_lst .out { background:#f7f7f7; color:#999; padding:11px 0; border-top:1px solid #e7e7e7 }
+#header .top .my_menu .my_menu_lst .out a > i { font-size:17px; vertical-align:-3px; margin-right:4px }
+
+#header .top .util { position:relative; margin-left:20px }
+#header .top .util > li { float:left; margin-left:18px }
+#header .top .util > li:first-child { margin-left:0 }
+#header .top .util > li:last-child { margin-left:24px }
+#header .top .util li a { display:block; padding:5px 0 9px }
+#header .top .util li a.btn_all { background:#ebebeb; border-radius:5px; padding:12px }
+
+#header .mobile_menu, #header .mobile_search, .mobile_share { display:none }
+#header .mobile_menu { position:absolute; left:10px; top:14px }
+/* #header .msit_m_mnu { position:absolute; left:10px; top:10px } */
+#header .mobile_menu > a { display:block; width:26px; overflow:hidden }
+#header .mobile_search { position:absolute; right:10px; top:14px }
+#header .mobile_share {  position:absolute; right:50px; top:15px }
+#header .msit_m_share { top: 15px; }
+
+#header h1 { float:left; margin-top:-5px }
+#header h1 img { height:58px }
+#header .traning_menu { float:right }
+#header .traning_menu li { float:left; margin-left:5px }
+#header .traning_menu li a { display:inline-block; border-radius:4px !important }
+
+#header .snsbox { border:1px solid #eee; background:#fff; padding:10px 20px 10px; z-index:120; position:absolute; top:0; right:0; width:240px; display:none; top:41px } /* 190911 2차 header 관련 z-index 수정 */
+#header .snsbox .tit { color:#333; font-size:14px; display:block;margin-bottom: 5px; }
+#header .snsbox ul > li { margin-left:10px; float:left }
+#header .snsbox ul > li:first-child { margin-left:0 }
+#header .snsbox ul > li a{height:24px;padding:0 !important}
+#header .ico_sns { background:url('../../../../../images/egovframework/com/builder/common/ico_sns.png') no-repeat; display:inline-block; width:24px; height:24px; background-size:145px; }
+#header .snsbox .close { background:url('../../../../../images/egovframework/com/builder/common/auto_close.png') no-repeat; position:absolute; display:block; width:9px; height:9px; top:15px; right:12px; background-size:9px 9px }
+#header .ico_sns.face { background-position:0 0 }
+#header .ico_sns.twitter { background-position:-24px 0 }
+#header .ico_sns.band { background-position:-48px 0 }
+#header .ico_sns.classting { background-position:-73px 0 }
+#header .ico_sns.cas { background-position:-97px 0 }
+#header .ico_sns.link { background-position:-121px 0 }
+
+#gnb { /*이솦 로고;현재는 베타로고 여백으로 조정 margin-left:23px*/ margin-left:10px }
+#gnb > ul > li { float:left; }
+#gnb > ul > li > a { float:left; font-size:19px; color:#434343; padding:10px 22px 28px; font-weight:600 }
+#gnb > ul > li > a:hover,
+#gnb > ul > li > a:focus,
+#gnb > ul > li > a.active { color:#7232d8 }  
+
+.dep2 { display:none; position:absolute; left:0; right:0; top:113px; height:203px; border-top:1px solid #ddd; border-bottom:1px solid #ddd; background:#fff; z-index:99 }
+.msit_dep2 { display:none; position:absolute; left:0; right:0; top:157px; height:203px; border-top:1px solid #ddd; border-bottom:1px solid #ddd; background:#fff; z-index:99 }
+.dep2 .e1, .dep2 .e2 { width:25%; padding-top:45px }
+.dep2 .e3 { width:50% }
+.dep2 .e3_2 { width:25% }
+.dep2 .e1 .in { width:235px; padding-left:25px }
+.dep2 .e1 h2 { font-size:30px; margin-bottom:25px; color:#434343; line-height:1 }
+.dep2 .e1 h2 + p { font-size:30px; margin-bottom:25px; color:#666; font-size:14px }
+.dep2 .e1 .dep2-lnb { margin-top:60px }
+.dep2 .e1 .dep2-lnb li { margin-top:24px } 
+.dep2 .e1 .dep2-lnb li a { font-size:15px; color:#363636; display:block; position:relative } 
+.dep2 .e1 .dep2-lnb li a > span { background:url('../../../../../images/egovframework/com/ebs/common/icon.png') no-repeat; display:inline-block; vertical-align:middle; text-align:center; margin-right:12px  }
+.dep2 .e1 .dep2-lnb li a > span.ico_01 { width:27px; height:21px; background-position:4px -73px }
+.dep2 .e1 .dep2-lnb li a > span.ico_02 { width:27px; height:21px; background-position:-34px -73px}
+.dep2 .e1 .dep2-lnb li a > span.ico_03 { width:27px; height:23px; background-position:-73px -73px}
+.dep2 .e1 .dep2-lnb li a i { position:absolute; right:0; top:5%; font-size:20px }
+
+.dep2 .e2 .dep2-menu li a, .dep2 .e3 .dep2-menu li a { font-size:18px; color:#363636; display:block; padding:10px 30px; border-radius:30px; position:relative; transition:background 0.3s }
+.dep2 .e2 .dep2-menu li a:after, .dep2 .e3 .dep2-menu li a:after { content:''; background:url('../../../../../images/egovframework/com/ebs/common/bullet.png') -150px -14px no-repeat; width:9px; height:14px; display:block; position:absolute; top:35%; right:30px; } 
+.dep2 .e2 .dep2-menu li a:hover, .dep2 .e2 .dep2-menu li a:focus, .dep2 .e3 .dep2-menu li a:hover, .dep2 .e3 .dep2-menu li a:focus { background:#7232d8; color:#fff }
+.dep2 .e2 .dep2-menu li a:hover:after, .dep2 .e2 .dep2-menu li a:focus:after,.dep2 .e3 .dep2-menu li a:hover:after, .dep2 .e3 .dep2-menu li a:focus:after{ background-position:-150px 0 }
+
+/*190605 focus 웹접근성 이슈 수정*/
+.dep2 .e3 .dep2-menu.manymnu{position: relative; margin-top: 45px}
+.dep2 .e3 .dep2-menu.manymnu li{width: 50%}
+.dep2 .e3 .dep2-menu.manymnu li:nth-child(3){position: absolute; right: 0; top:0}
+.dep2 .e3 .dep2-menu.manymnu li:nth-child(4){position: absolute; right: 0; bottom: 0}
+
+/* 191004 비트GO! 두들리GO! GNB 추가 */
+.dep2 .e3 .dep2-menu.manymnu2{position: relative; margin-top: 45px}
+.dep2 .e3 .dep2-menu.manymnu2 li{width: 50%}
+.dep2 .e3 .dep2-menu.manymnu2 li:nth-child(4){position: absolute; right: 0; top:0}
+.dep2 .e3 .dep2-menu.manymnu2 li:nth-child(5){position: absolute; right: 0;top:44px}
+
+/* PC  검색  */
+.searchArea { height:212px; position:absolute; left:0; right:0; z-index:98; opacity:0; visibility:hidden; transition:all ease-in 0.2s; -webkit-transition:all ease-in 0.2s; -ms-transition:all ease-in 0.2s; }
+.searchArea .searchFrm { max-width:1170px; background:rgba(77,44,119,0.95); margin:0 auto; color:#fff; height:212px; position:relative } 
+.searchArea .searchFrm .search_close { position:absolute; bottom:35px; right:40px; width:24px; height:24px; display:block }
+.searchArea .searchFrm .search_close i { font-size:38px }
+.searchArea .searchFrm .searchZone { max-width:744px; margin:0 auto; position:relative; padding-top:60px }
+.searchArea .searchFrm .searchZone .searchBox { border-bottom:2px solid #fff; width:100%; height:60px; position:relative; margin-bottom:20px }
+.searchArea .searchFrm .searchZone .searchBox i {font-size: 20px; float: right; margin-right: 10%; margin-top: 18px; cursor:pointer;}
+.searchArea .searchFrm .searchZone .searchBox label { position:absolute; cursor:default; font-weight:600; left:3px; top:10px; color:#fff; font-size:22px; transition:all 0.25s ease; -ms-transition:all 0.25s ease; -webkit-transition:all 0.25s ease; transform:translateY(0px); -ms-transform:translateY(0px); -webkit-transform:translateY(0px); z-index:100 }
+.searchArea .searchFrm .searchZone .searchBox label.active { transform:translateY(-25px); -ms-transform:translateY(-25px); -webkit-transform:translateY(-25px); font-size:15px; left:0 }
+.searchArea .searchFrm .searchZone .searchBox input { border:0; outline:0; width:90%; background:transparent; color:#fff; font-size:22px; font-weight:400; position:absolute; left:0; bottom:10px; height:34px; padding:0 5px }
+.searchArea .searchFrm .searchZone .searchBox .ico_search { position:absolute; right:7px; bottom:10px; width:44px; height:44px; display:block; background:url('../../../../../images/egovframework/com/ebs/common/ico_search.png') no-repeat }
+.searchArea .searchFrm .searchZone .searchkeyword { padding:0 4px }
+.searchArea .searchFrm .searchZone .searchkeyword li { font-size:15px; float:left; margin-right:12px; line-height:22px }
+.searchArea.open { opacity:1; visibility:visible; top:114px }
+
+
+/* 모바일 메뉴 */
+#mobile_menu { display:none; position:fixed; width:90%; max-width:650px; height:100%; left:-100%; top:0 !important; padding-top:0; background:#eeeef0; z-index:10000; overflow-y:auto; -webkit-overflow-scrolling:touch }
+html.mm-opened, html.mm-opened body #mobile_menu { display:block }
+.dim { display:none; z-index:9998; position:fixed; left:0; right:0; top:0; width:100%; height:100%; background:#000; opacity:0.6 }
+
+#mobile_menu .mm_head { background:#7232d8; background:-webkit-linear-gradient(to right, #7232d8, #5189d6); background:linear-gradient(to right, #7232d8, #5189d6); padding:20px; border-bottom:1px solid #b395ea; position:relative }
+#mobile_menu .mm_head2 { background:#7232d8; background:-webkit-linear-gradient(to right, #330058, #1141C5); background:linear-gradient(to right, #3426d8, #6453d6); padding:20px; border-bottom:1px solid #b395ea; position:relative }
+#mobile_menu .mm_head .persnal_info { position:relative }
+#mobile_menu .mm_head .user_thumb { width:40px; height:40px; background:#d2d2d2; display:inline-block; text-align:center; border-radius:50%; margin-right:15px }
+#mobile_menu .mm_head .user_thumb > img { width:100%; height:100% }
+#mobile_menu .mm_head .user_name { font-size:15px; color:#fff }
+#mobile_menu .mm_head .user_name > small { display:block; margin-top:4px; font-size:70%; letter-spacing:0 }
+#mobile_menu .mm_head .mobile_menu_close { background:url('../../../../../images/egovframework/com/ebs/common/mobile_menu_close.png') no-repeat; width:15px; height:16px; position:absolute; top:4%; right:0; background-size:15px 16px; display:block }
+#mobile_menu .mm_head .alarm { position:absolute; right:30px;top:-4px; background-size:15px 16px; display:block;width:26px; height:30px }
+#mobile_menu .mm_head .alarm > a > i { color:#fff; font-size:26px }
+#mobile_menu .mm_head .alarm > a > em { color:#fff; display:block; position:absolute; top:0; right:-2px; background:#7232d8; font-family:'Arial'; font-size:8px; font-weight:bold; border-radius:50%; width:15px; height:15px; text-align:center; line-height:1.5em }
+
+#mobile_menu .mm_head .mm_head_mn { max-width:90%; margin:0 auto; margin-top:30px }
+#mobile_menu .mm_head .mm_head_mn > a { width:24%; float:left; display:block; border:1px solid #fff; border-radius:50px; color:#fff; opacity:0.7; text-align:center; margin-left:1%; font-size:13px; padding:1.7% 0 }
+#mobile_menu .mm_head .mm_head_mn > a.online_class{min-width:131px}
+
+#mobile_menu .mobile_gnb { margin-bottom:10px }
+#mobile_menu .mobile_gnb > li { background:#fff; border-bottom:1px solid #f1f1f1 }
+#mobile_menu .mobile_gnb > li > a { padding:3% 7%; color:#191919; font-size:15px; font-weight:400; display:block; /*height:100%;*/ background:#fff; transition:0.3s }
+#mobile_menu .mobile_gnb > li > a:hover, 
+#mobile_menu .mobile_gnb > li > a:focus {background:#e1e1e1}
+#mobile_menu .mobile_gnb > li > a > i {font-size:20px; position:absolute; right:7%; top:50%;margin-top: -10px;transition:.3s}/* 190911 2차 header 수정 - transition 추가 *//* 191122 수정 */
+
+#mobile_menu .mobile_gnb > li.open > a { background:#f1f1f1 } 
+/* #mobile_menu .mobile_gnb > li.open .nav-second { display:block } */ /* 190911 2차 header 수정 - 주석처리 */
+#mobile_menu .mobile_gnb > li.open > a > i{transform:rotate(180deg)}/* 190911 2차 header 수정 - 추가 */
+#mobile_menu .mobile_gnb .nav-second { background:#fff; padding:8px 0 }
+#mobile_menu .mobile_gnb .nav-second li > a { border-top:none; padding:2% 0 2% 9%; font-size:14px; color:#737272; line-height:1 }
+#mobile_menu .mobile_gnb .nav-second li > a:hover,
+#mobile_menu .mobile_gnb .nav-second li > a.active { color:#363636; font-weight:600 }
+#mobile_menu .mobile_gnb,
+#mobile_menu .mobile_gnb li,
+#mobile_menu .mobile_gnb li a { display:block; position:relative; box-sizing:border-box }
+#mobile_menu .mobile_gnb .nav-second { display:none }
+#mobile_menu .mobile_gnb .mobile_lnb a { color:#5189d6 }
+
+#mobile_menu .custom_wrap { border-top:1px solid #e0e0e1; border-bottom:1px solid #e0e0e1; background:#f7f7f7; padding:5% 0 }
+#mobile_menu .custom_wrap > a {  /*공유하기 제거width:50%;*/width:100%; display:block; font-size:15px; text-align:center; float:left }
+#mobile_menu .custom_wrap > a > span { background:url('../../../../../images/egovframework/com/ebs/common/ico_headerx3.png') no-repeat; background-size:115px; display:inline-block; width:19px; height:18px; vertical-align:middle }
+#mobile_menu .custom_wrap > a > span.ico_01 { background-position:-24px 0; margin-right:15px }
+#mobile_menu .custom_wrap > a > span.ico_02 { background-position:-50px 0; margin-right:15px }
+#mobile_menu .logout { font-size:12px; color:#888; margin-top:10px; margin-right:20px; float:right; display:inline-block }
+#mobile_menu .logout > i { font-size:18px; vertical-align:-4px; margin-right:4px }
+
+#mobile_menu .mem_apply{border-top:1px solid #e0e0e1; border-bottom:1px solid #e0e0e1; background:#f7f7f7; padding:5% 7% }
+#mobile_menu .mem_apply a{font-weight:500; font-size:14px;}
+
+.ico_header { background:url('../../../../../images/egovframework/com/ebs/common/ico_headerx2.png') no-repeat; display:inline-block; width:26px; height:25px; background-size:156px; }
+.ico_header.menu { background-position:-148px 0 }
+.ico_header.user { background-position:0 6px; width:26px; height:32px }
+.ico_header.qna { background-position:-34px 0 }
+.ico_header.share { background-position:-67px 0 }
+.ico_header.search { background-position:-101px 0 }
+
+/* 190806 모바일 상단 메뉴 고정 노출 : s */
+.mo{display:none}
+.depth1_menu{display: none;width:100%;padding:0 10px;border-bottom:1px solid #e6e6e6;background:#fff;}
+.depth1_menu .menu__list{overflow-x:auto;width:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.depth1_menu .menu__list li{display:inline-block;width:auto;vertical-align:top}
+.depth1_menu .menu__list li a{display:block;padding:15px 18px;color:#000;font-size:15px;line-height:1}
+.depth1_menu .menu__list li.active a{color:#7232d8;font-weight:bold}
+.learning_menu.mo .tab_group a, .tab_group .content_menu a{border:0}
+/* 190806 모바일 상단 메뉴 고정 노출 : e */
+
+#footer { width:100%; background:#fff; padding:0 0 36px; border-top:1px solid #dfdfdf; clear:both }
+#footer .foot_tnb {border-bottom: 1px solid #dfdfdf;} /*선경 수정*/
+#footer .foot_tnb ul{padding: 10px 0;} /*-*/
+#footer .foot_tnb ul li{float: left; margin-right: 20px;} /*-*/
+#footer .foot_tnb ul li:last-of-type{float: right; margin-right: 0;} /*-*/
+#footer .foot_tnb ul li .logo_ebs img{height: 40px;} /*-*/
+#footer .foot_tnb ul li .logo_msit img{margin-top: 3px; height: 34px;} /*-*/
+#footer .foot_tnb ul li .logo_mi img{margin-top: 3px;}
+#footer .foot_tnb ul li .logo_esop img{height: 40px;} /*-*/
+
+#footer .foot_lnb {padding-top:21px; margin-bottom:18px} /*sungha 수정*/
+#footer .foot_lnb > li { margin-right:25px; float:left; line-height:24px }
+#footer .foot_lnb > li:last-child { margin-right:0 }
+#footer .foot_lnb > li > a { color:#3c3c3c }
+#footer .foot_copy_wrap { font-size:13px; color:##3c3c3c; line-height:22px }
+#footer .foot_copy_wrap address span { display:inline-block; margin-right:10px }
+#footer .foot_copy_wrap .contact > * { display:inline-block }
+#footer .foot_copy_wrap .contact dt { margin-right:4px }
+#footer .foot_copy_wrap .contact dd + dt { margin-left:8px }
+#footer .foot_copy_wrap .copyright { color:#aeaeae }
+#footer .ft_ebs_logo{margin:35px 30px 0px 0px; float:left} /*sungha 수정*/
+#footer .ft_dummy{float:left} /*sungha 수정*/
+#footer .familysiteWrap { min-width:182px; z-index:15; position:absolute; right:0; top:21px }
+#footer .familySite { position:relative; height:32px; }
+#footer .familySite > a { color:#a1a1a1; background:transparent; font-weight:400; height:100%; border:1px solid #dfdfdf; display:block; line-height:1.2em; padding:7px 30px 6px 15px }
+#footer .familySite > a:hover { border:1px solid #a1a1a1; color:#3c3c3c }
+#footer .familySite > a:after { content:''; background:url('../../../../../images/egovframework/com/ebs/common/bullet.png') no-repeat; display:block; width:10px; height:6px; position:absolute; top:40%; right:15px; transition:0.6s; -webkit-transition:0.6s;  }
+#footer .familySite ul { position:absolute; bottom:31px; left:0; right:0; background:#fff; border: 1px solid #dfdfdf; z-index:16; display:none; }
+#footer .familySite ul > li > a { display:block; color:#a1a1a1; line-height:1.2em; padding: 6px 15px 4px }
+#footer .familySite ul > li > a:hover,
+#footer .familySite ul > li > a:focus { background:#dfdfdf; color:#3c3c3c } 
+
+@media (max-width: 905px) {
+	#footer .ft_ebs_logo{margin:0px 30px 0px 0px; float:left}
+	}
+
+/* Back to top Button
+------------------------------------*/
+#chatbot-header { position:relative; padding:15px; border-top:3px solid #d2d6de; border-bottom:1px solid #e5e5e5; background:#7232d8; overflow:hidden }
+#chatbot { position:fixed; bottom:10px; right:4.5%;margin-right: -22px;box-sizing:border-box;z-index:9999; transition:all 0.3s; cursor:pointer; text-align:center }
+#chatbot > a{display: block;}
+#top { display:none; position:fixed; bottom:258px; right:4.5%; width:47px; height:47px; padding:10px 0; box-sizing:border-box; background:rgba(0,0,0,0.2); border-radius:50%; z-index:180; transition:all 0.3s; cursor:pointer; text-align:center }
+#top:hover{ background:rgba(0,0,0,0.7) }
+
+/* Ellipsis
+------------------------------------*/
+/* ���� �̻� ������ǥ */
+.ellip { display:block; height:100% }
+.ellip-line { display:inline-block; text-overflow:ellipsis; white-space:nowrap;word-wrap:normal;vertical-align:top}
+.ellip, .ellip-line { position:relative; overflow:hidden; max-width:100% }
+.ellip2 { display: -webkit-box !important; line-height: 1.2m; height: 2.5em; white-space: normal; overflow: hidden; -ms-text-overflow: ellipsis; text-overflow: ellipsis; -ms-word-wrap: break-word; word-wrap: break-word; -webkit-line-clamp: 2;	line-clamp: 2; -webkit-box-orient: vertical;}
+.ellip7 { display: -webkit-box !important; line-height: 1.2m; height: 8.4em; white-space: normal; overflow: hidden; -ms-text-overflow: ellipsis; text-overflow: ellipsis; -ms-word-wrap: break-word; word-wrap: break-word; -webkit-line-clamp: 7;	line-clamp:7; -webkit-box-orient: vertical;}
+
+/* Modal (LayerPopup) */
+.modal-popup {overflow-y:auto; position:fixed; left: 0; top: 0; width: 100%; height:100%; background:rgba(0,0,0,.75); z-index:1000; display: none; opacity:0; transition:opacity 0.3s linear; -webkit-transition:opacity 0.3s linear; -o-transition:opacity 0.3s linear; box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.3); transition:0.3s }
+.modal-popup-group {width:95%;margin:5vh auto; background:#eee; border:2px solid #000} /* height:100% 제거,margin값 변경 190731 */
+.modal-sns_group { display:inline-block; width:24px; height:24px; margin:0 3.5% }
+
+.modal-popup-group.round {border-radius:10px; background:#fff; border:1px solid #b693ee; max-width:600px; padding:0 20px 4%; color:#191919} /* padding값 변경 190731 */
+.modal-popup-group.round.max { max-width:1200px }
+.modal-popup-group.round .modal-header { padding:4% 0 4%; border-top:0; border-bottom:1px solid #e8e8e8 }
+/*.modal-popup-group.round.max .modal-header { padding:2% 0 2%; }*/
+.modal-popup-group.round .modal-header .close_modal { position:absolute; right:-3px; top:15px }
+.modal-popup-group.round .modal-header .close_modal > i { font-size:28px }
+.modal-popup-group.round .modal-header h4 { font-weight:500; font-size:24px }
+.modal-popup-group.round .modal-body {overflow-y:auto;overflow-x: hidden;height:500px;padding:1% 0 3.5%; border-bottom:1px solid #e8e8e8;} /* ov-x:h 추가 190731 */
+/* : s 190725 */
+.modal-popup.hello-popup .modal-popup-group.round {max-width:800px}
+.modal-popup-group.round .modal-body.hello_scratch {overflow-y:visible;height:620px;padding-bottom:5% !important}
+.modal-popup-group.round .modal-body.hello_entry {position:relative;padding-bottom:5% !important;text-align:center}
+.modal-popup-group.round .modal-body.hello_entry img{max-height:100%}
+.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box{position:absolute;left:50%;top:50%;width:100%;margin:-30px 0 0 -50%}
+.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box a{display:inline-block;position:absolute;width: 50px;height: 55px; background: rgba(0,0,0,0.3)}
+.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box a+i{position:absolute;font-size:50px;line-height:55px;cursor:pointer}
+.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box .btn_hello_entry_lt{left:0}
+.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box .btn_hello_entry_lt+i{left:0}
+.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box .btn_hello_entry_rt{right:0}
+.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box .btn_hello_entry_rt+i{right:0}
+/* : e 190725 */
+/* 텍스트 코딩-화상강의 : s 190814 */
+.modal-popup-group.round .modal-body.video_lrn_intro{height: auto;}
+.modal-popup-group.round .modal-body.video_lrn_intro .sub_tit{font-size: 16px;}
+.modal-popup-group.round .modal-body.video_lrn_intro .sub_tit img{width:40px;}
+.modal-popup-group.round .modal-body.video_lrn_intro .txt{margin-top: 5px;}
+.modal-popup-group.round .modal-body.video_lrn_intro .agree_box{overflow-y: auto;height:200px;margin:20px 0 10px;padding:20px;background:#f4f5f7;} /*191023 padding 추가*/
+.modal-popup-group.round .modal-body.video_lrn_intro .agree_box > p{padding-bottom:10px;line-height:1.5;word-break:keep-all} /*191023 추가*/
+.modal-popup-group.round .modal-body.video_lrn_intro .agree_box > ul{padding:10px 0 20px} /*191023 추가*/
+.modal-popup-group.round .modal-body.video_lrn_intro .agree_box > ul > li{padding-bottom:5px;word-break:keep-all} /*191023 추가*/
+/* 텍스트 코딩-화상강의 : e 190814 */
+.modal-popup-group.round .modal-body h6 { font-size:15px; margin-bottom:5px }
+.modal-popup-group.round .modal-body h6 > i { font-size:20px }
+.modal-popup-group.round .modal-body h6 > span { vertical-align:4px }
+.modal-popup-group.round .modal-footer { background:#fff;}
+.modal-popup-group.round .modal-footer > a { border-radius:20px; margin-left:10px; font-size:15px; padding:6px 30px; transition:0.3s }
+.modal-popup-group.round .modal-footer > a:first-child:hover { color:#fff; background:#7232d8 }
+.modal-popup-group.round .modal-footer > a:last-child:hover { color:#7232d8; background:#fff }
+
+.img_popup { max-width:600px }
+/* : s 190725 */
+@media (max-width: 1024px) {
+	.modal-popup-group.round .modal-body.hello_scratchm,.modal-popup-group.round .modal-body.hello_entry{height:700px }
+}
+@media (max-width: 768px) {
+	.modal-popup-group.round .modal-body.hello_scratch,.modal-popup-group.round .modal-body.hello_entry{height:500px }
+}
+@media (max-width: 640px) {
+	.modal-popup-group.round .modal-body.hello_scratch,.modal-popup-group.round .modal-body.hello_entry{height:400px }
+}
+@media (max-width: 414px) {
+	.modal-popup-group.round .modal-body.hello_scratch,.modal-popup-group.round .modal-body.hello_entry{height:240px}
+	.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box{margin:-25px 0 0 -50%}
+	.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box a{width: 30px;height: 35px}
+	.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box a+i{font-size:30px;line-height:35px}
+}
+@media (max-width: 340px) {
+	.modal-popup-group.round .modal-body.hello_entry .btn_hello_entry_box{margin:-35px 0 0 -50%}	
+}
+/* : e 190725 */
+
+.layer_img { position:absolute; left:50%; margin-left:-400px; top:140px; max-width:600px; text-align:left; z-index:-1; visibility:hidden }
+.layer_img.big_size { margin-left:-480px; max-width:720px }
+.layer_img.on, 
+.layer_img.big_size.on { z-index:9990; visibility:visible }
+.layer_img .in_layer { position:relative; top:0; padding-bottom:20px; background:#191919 }
+.layer_link_box { position:relative }
+.layer_img .control_txt { position:absolute; bottom:0; left:0; padding-left:10px; text-align:left; font-size:11px; color:#fff; line-height:24px }
+.layer_img .btn_layer_close { position:absolute; bottom:7px; right:12px; width:10px; height:9px; background:url('../../../../../images/egovframework/com/ebs/common/btn_layer_close.gif') no-repeat 0 0 }
+
+
+/* 바디에 스크롤 막는 방법 */
+.not_scroll{position: fixed; overflow: hidden; width: 100%; height: 100%}
+
+@media (max-width: 720px) {
+	.layer_img.big_size { left:0; width:100%; margin-left:0; right:0 }	
+}
+@media (max-width: 600px) {
+	.layer_img { left:0; width:100%; margin-left:0; right:0 }	
+}
+
+/* 내 홈페이지 목록 팝업 : s 190731 */
+.btn_hmpg_sort{padding:2px 10px;display: inline-block;margin:0 -5px;border-radius: 30px !important;}
+.modal-popup.myhmpglist-popup .modal-body{height:auto;padding:0}
+.modal-popup.onehmpg-popup .modal-popup-group.round,.modal-popup.fivehmpg-popup .modal-popup-group.round{max-width:700px}
+.modal-popup.onehmpg-popup .modal-body,.modal-popup.fivehmpg-popup .modal-body{height:auto !important}
+.modal-popup.onehmpg-popup .hmpg_message,.modal-popup.fivehmpg-popup .hmpg_message{padding:40px 0;text-align:center;word-break: keep-all;-ms-word-break: keep-all}
+/* 내 홈페이지 목록 팝업 : e 190731 */
+
+/* 2차 header 수정 : s 190911 *//* 191122 header 수정 : s */
+.ico_header_v1{display:inline-block;width:25px;height:27px;vertical-align:top;background:url(../../../../../images/egovframework/com/ebs/common/ico_header_v1.png) no-repeat}
+.ico_header_v1.qna{background-position:0 0}
+.ico_header_v1.share{background-position:-35px 0}
+.ico_header_v1.search{background-position:-70px 0}
+#header.new_type .top{max-width:100%;margin-top:0;padding:12px 0 13px;border-bottom:1px solid #e9e7ed}
+#header.new_type .top .top_util{max-width:1280px;margin:0 auto;padding:0 10px}
+#header.new_type .top .top_util.fr{float:none !important}
+#header.new_type .top .top_util .top_util_noti.fl{float:right !important}
+#header.new_type .top .my_menu{width:auto;margin-left:24px;padding-bottom:0}
+#header.new_type .top .my_menu > a{width:30px;height:30px;background:none}
+#header.new_type .top .my_menu > a:after{display:none}
+#header.new_type .top .my_menu > a img{vertical-align:top}
+#header.new_type .top .my_menu .my_menu_lst{width:134px;margin-left:-68px;border-color:#7232d8;border-radius:3px;transition:all 0.2s ease-in-out}
+#header.new_type .top .my_menu .my_menu_lst:before{top:-6px;left:50%;width:13px;height:6px;margin-left:-6px;background:url(../../../../../images/egovframework/com/ebs/common/depth2_before_v1.png) no-repeat 0 0}
+#header.new_type .top .my_menu .my_menu_lst .my_admin{padding-top:6px;padding-bottom:7px;border-color:#e9e6ed}
+#header.new_type .top .my_menu .my_menu_lst .my_admin .thumb,
+#header.new_type .top .my_menu .my_menu_lst .my_admin .name .nickname{display:none}
+#header.new_type .top .my_menu .my_menu_lst .my_admin .name{width:100%;padding-top:0;color:#1a1a1a;text-align:center !important}
+#header.new_type .top .my_menu .my_menu_lst .admin_menu{padding:10px 0}
+#header.new_type .top .my_menu .my_menu_lst .admin_menu > li{padding:0}
+#header.new_type .top .my_menu .my_menu_lst .admin_menu > li > a{color:#737373;font-size:13px;line-height:19px}
+#header.new_type .top .my_menu .my_menu_lst .admin_menu > li > a:hover{color:#000}
+#header.new_type .top .my_menu .my_menu_lst .out{border-top:none}
+#header.new_type .top .my_menu .my_menu_lst .out a,
+#header.new_type .top .my_menu .my_menu_lst .out a i{color:#888}
+#header.new_type .top .my_menu.active > a + .my_menu_lst{margin-left:-68px;transform:translateY(38px);-webkit-transform:translateY(38px)}
+#header.new_type .top .util{margin:1px 0 0}
+#header.new_type .top .util > li{margin-left:28px}
+#header.new_type .top .util > li > a{padding:0}
+#header.new_type .top .util > li > a i{color:#a298b2;font-size:20px}
+#header.new_type .top .alarm{padding-top:0}
+#header.new_type .top .alarm > a > i{color:#a298b2;font-size:32px}
+#header.new_type h1{margin-top:20px}
+#header.new_type h1 img{height:42px;vertical-align:top}
+#header.new_type .traning_menu{top:auto;margin-top:26px}
+#header.new_type .traning_menu > li{position:relative;margin-left:10px}
+#header.new_type .traning_menu > li:first-child{margin-left:0}
+#header.new_type .traning_menu > li > a{position:relative;padding:0 20px;color:#666;font-size:13px;line-height:31px;border:1px solid #b2b2b2;border-radius:17px !important;background:#fff;z-index:110;transition:ease-out.3s}
+#header.new_type .traning_menu > li:hover > a{color:#fff;border-color:#7232d8;background:#7232d8}
+#header.new_type .traning_menu li .dep_traning{display:none;position:absolute;top:17px;left:0;width:100%;padding:25px 0 6px;border:1px solid #7232d8;border-top:none;border-bottom-right-radius:14px;border-bottom-left-radius:14px;background:#f3f0fa;z-index:100}
+#header.new_type .traning_menu li .dep_traning li{float:none;margin-left:0;text-align:center}
+#header.new_type .traning_menu li .dep_traning li a{height:auto;padding:0;color:#333;font-size:13px;line-height:20px;vertical-align:top}
+#header.new_type .traning_menu li .dep_traning li a:hover,
+#header.new_type .traning_menu li .dep_traning li a:focus{font-weight:600}
+#header.new_type .top .util li .lang_select{padding:0 10px;border-radius:20px;background-color:#ebe6f2}
+#header.new_type .top .util li .lang_select a{position:relative;float:left;padding:0 6px;color:#8c8c8c;font-size:12px;line-height:27px}
+#header.new_type .top .util li .lang_select a:first-child:after{content:'';position:absolute;top:50%;right:-2px;width:1px;height:9px;margin-top:-5px;background-color:#999}
+#header.new_type .top .util li .lang_select a.active{color:#666;font-weight:500}
+.new_type #gnb > ul > li{position:relative;float:left;width:150px;text-align:center}
+.new_type #gnb > ul > li > a{display:block;position:relative;float:none;padding:33px 20px;color:#595959;font-size:18px;line-height:18px}
+.new_type #gnb > ul > li > a:hover,
+.new_type #gnb > ul > li > a:focus,
+.new_type #gnb > ul > li > a.active{color:#434343}
+.new_type #gnb > ul > li:hover > a:after,
+.new_type #gnb > ul > li > a:focus:after,
+.new_type #gnb > ul > li > a.active:after{content:'';position:absolute;bottom:-1px;left:0;width:100%;height:3px;background:#7232d8;z-index:100}
+.new_type #gnb > ul > li .depth{display:none;position:absolute;top:76px;left:0;width:100%;padding-top:20px;z-index:95}
+.new_type #gnb > ul > li .depth.txt_long{left:-20px;width:calc(100% + 40px)}
+.new_type #gnb > ul > li .depth li a{display:inline-block;color:#666;font-size:15px;line-height:185%;vertical-align:top}
+.new_type #gnb > ul > li .depth li a:hover,
+.new_type #gnb > ul > li .depth li a:focus,
+.new_type #gnb > ul > li .depth li a.on{color:#7232d8;font-weight:600}
+.new_type #gnb .bg_depth{display:none;position:absolute;top:140px;right:0;left:0;height:213px;border-top:1px solid #d9d9d9;border-bottom:1px solid #d9d9d9;background:rgba(255,255,255,0.97);z-index:90}
+.new_type #gnb .bg_depth .container, .new_type #gnb .bg_depth .banner img{height:100%}
+.new_type #gnb .bg_depth .banner{position:absolute;top:50%;right:10px;width:250px;height:180px;transform:translateY(-50%)}
+.new_type .searchArea.open{top:141px}
+.new_type .searchArea .searchFrm .searchZone{max-width:700px}
+.new_type .searchArea .searchFrm .searchZone .searchBox{border-bottom-width:1px}
+.new_type .searchArea .searchFrm .searchZone .searchBox label,
+.new_type .searchArea .searchFrm .searchZone .searchBox input{font-size:25px;font-weight:300}
+.new_type .searchArea .searchFrm .searchZone .searchBox i{position:absolute;right:60px;margin-right:0}
+.new_type .searchArea .searchFrm .searchZone .searchBox .ico_search{bottom:15px;width:34px;height:34px;background:url(../../../../../images/egovframework/com/ebs/common/ico_search_v1.png) no-repeat 0 50%;background-size:100%}
+.searchArea .searchFrm .searchZone .searchBox label.active{font-size:15px}
+#mobile_menu.new_type .custom_wrap > a > span.ico_01{width:18px;height:17px;margin:-2px 10px 0 0;background:url(../../../../../images/egovframework/com/ebs/common/ico_header_v1x3.png) no-repeat -4px -4px;background-size:130px}
+/* 2차 header 수정 : e 190911 *//* 191122 header 수정 : e */
+
+/* 190916 챗봇 아이콘 수정 : s */
+#chatbot.scroll{bottom:80px}
+#chatbot.scroll_bottom{bottom:120px}
+@media (max-width:640px){
+	#chatbot{width:70px;margin-right:-11px}
+}
+/* 190916 챗봇 아이콘 수정 : e */
+
+/* 프로필 이미지 수정 : s 191112 */
+.modal-popup.cropper-popup #cropperDiv{width:100% !important}
+.modal-popup.cropper-popup #cropperDiv .cropper-container.cropper-bg{width:100% !important}
+/* 프로필 이미지 수정 : e 191112 */
+
+/* 191122 footer 수정 : s */
+#footer.newtype{border-top:1px solid #e4dfeb}
+#footer.newtype .foot_tnb{background-color:#f5f2f7;border-bottom:1px solid #e4dfeb}
+#footer.newtype .foot_tnb ul li{margin-right:25px}
+#footer.newtype .foot_tnb ul li:nth-child(3), #footer.newtype .foot_tnb ul li:last-child{margin-right:0}
+#footer.newtype .foot_tnb ul li a{display:inline-block;height:40px}
+#footer.newtype .foot_tnb ul li .logo_ebs img, #footer .foot_tnb ul li .logo_msit img, #footer .foot_tnb ul li .logo_mi img{height:29px;margin-top:5.5px}
+#footer.newtype .foot_tnb ul li .logo_esop img{height:35px;margin-top:2.5px}
+#footer.newtype .foot_tnb + .container{padding:0}
+#footer.newtype .foot_lnb{padding-top:30px;margin-bottom:11px}
+#footer.newtype .foot_lnb > li{margin-bottom:5px;line-height:1}
+#footer.newtype .foot_lnb > li:after{content:"";display:inline-block;position:relative;top:1px;left:12px;width:1px;height:13px;background-color:#b3b3b3}
+#footer.newtype .foot_lnb > li:last-child:after{display:none}
+#footer.newtype .foot_lnb > li > a{color:#4c4c4c;font-size:15px}
+#footer.newtype .foot_copy_wrap address span{display:block;margin-right:0;color:#4c4c4c;font-size:14px}
+#footer.newtype .foot_copy_wrap .copyright{color:#808080}
+/* 191122 footer 수정 : e */
+
+/* 200205 내 홈페이지 목록 팝업창 : s */
+.myhmpglist-popup .highlight:hover{color:#7232d8}
+/* 200205 내 홈페이지 목록 팝업창 : e */
+
+/* 200226 온라인클래스 : s */
+#header.new_type.online_type h1{margin-top:25px;line-height:1}
+#header.new_type.online_type h1 a{vertical-align:top}
+#header.new_type.online_type h1 img{height:auto}
+.new_type.online_type #gnb > ul > li{width:auto} /* 200313 mg 제거 */
+.new_type.online_type #gnb > ul > li:last-child{margin-right:0}
+.new_type.online_type #gnb > ul > li:last-child > a{padding-right:0}
+.new_type.online_type #gnb > ul > li:last-child:hover > a:after,
+.new_type.online_type #gnb > ul > li:last-child > a:focus:after,
+.new_type.online_type #gnb > ul > li:last-child > a.active:after{width:calc(100% + 20px)}
+.new_type.online_type #gnb > ul > li > span{display:block;position:relative;float:none;padding:33px 20px;color:#595959;font-size:18px;font-weight:600;line-height:18px}
+.new_type.online_type #gnb > ul > li > span a + a{position:relative;margin-left:14px}
+.new_type.online_type #gnb > ul > li > span a + a:before{content:'';position:absolute;top:50%;left:-7px;width:2px;height:17px;margin-top:-8px;background-color:#595959}
+.new_type.online_type #gnb > ul > li > span:hover,
+.new_type.online_type #gnb > ul > li > span:focus,
+.new_type.online_type #gnb > ul > li > span.active{color:#434343}
+.new_type.online_type #gnb > ul > li > span:hover:after,
+.new_type.online_type #gnb > ul > li > span:focus:after,
+.new_type.online_type #gnb > ul > li > span.active:after{content:'';position:absolute;bottom:-1px;left:0;width:100%;height:3px;background:#7232d8;z-index:100}
+.new_type.online_type .searchArea{display:none}
+.depth1_menu.online_type .menu__list li span{display:block;padding:15px 18px;color:#000;font-size:15px;line-height:1}
+.depth1_menu.online_type .menu__list li span a{display:inline-block;padding:0}
+.depth1_menu.online_type .menu__list li span a + a{position:relative;margin-left:12px}
+.depth1_menu.online_type .menu__list li span a + a:before{content:'';position:absolute;top:50%;left:-6px;width:1px;height:13px;margin-top:-6px;background-color:#000}
+.online_type + #mobile_menu .mm_head .mm_head_mn > a{width:32%}
+.online_top{position:relative;padding:40px 0 45px;text-align:center;background:#7232d8;background:-webkit-linear-gradient(to right, #662dc2, #d069a9);background:linear-gradient(to right, #662dc2, #d069a9)}
+.online_top .step{margin:0 auto 27px;font-size:0}
+.online_top .step > li{display:inline-block;position:relative;width:161px;height:161px;margin:40px 60px 0 0;padding-top:50px;color:#fff;font-size:20px;font-weight:600;line-height:135%;letter-spacing:0;vertical-align:top;border:3px solid #e5e5e5;border-radius:50%}
+.online_top .step > li:before{content:'';position:absolute;top:-21px;left:50%;width:50px;height:50px;margin-left:-25px;border-radius:50%;background:#fff url(../../../../../images/egovframework/com/ebs/online/sp_num.png) no-repeat}
+.online_top .step > li:after{content:'';position:absolute;top:50%;right:-35px;width:9px;height:11px;margin-top:-5.5px;background:url(../../../../../images/egovframework/com/ebs/online/arr.png) no-repeat 0 0}
+.online_top .step > li .ico_login{display:inline-block;color:#dccef2;font-size:30px;vertical-align:top}
+.online_top .step > li:nth-child(even){border-color:#4d2c77;background-color:#4d2c77}
+.online_top .step > li:nth-child(even):before{background-color:#6b3da6}
+.online_top .step > li:last-child{margin-right:0}
+.online_top .step > li:last-child:after{display:none}
+.online_top .step > li.num01:before{background-position:0 0}
+.online_top .step > li.num02:before{background-position:-60px 0}
+.online_top .step > li.num03:before{background-position:-120px 0}
+.online_top .step > li.num04:before{background-position:-180px 0}
+.online_top .step > li.num05:before{background-position:-240px 0}
+.online_top .txt{padding:5px 20px 0;color:#fff;font-size:15px;line-height:22px;text-align:center;word-break:keep-all}
+.online_main .online_top .srch_form{padding:5px 0 15px}
+.online_main .online_top .srch_form .srch_area{position:relative;max-width:740px;margin:0 auto;padding:10px 10px 0 100px;text-align:left;border-bottom:1px solid #f9f9f9}
+.online_main .online_top .srch_form .srch_area .lbl_srch{position:absolute;top:50%;left:0;margin-top:-16px;padding:0 14px;color:#7232d8;font-size:15px;font-weight:500;line-height:31px;border-radius:16px;background-color:#fff}
+.online_main .online_top .srch_form .srch_area .inp_srch{width:100%;height:63px;color:#fff;font-size:27px;font-weight:500;border:none;background:none;outline:0}
+.online_main .online_top .srch_form .srch_area .inp_srch::-webkit-input-placeholder{color:#fff !important}
+.online_main .online_top .srch_form .srch_area .inp_srch:-moz-placeholder{color:#fff !important;opacity:1}
+.online_main .online_top .srch_form .srch_area .inp_srch::-moz-placeholder{color:#fff !important;opacity:1}
+.online_main .online_top .srch_form .srch_area .inp_srch:-ms-input-placeholder{color:#fff}
+.online_main .online_top .srch_form .srch_area .btn_srch{position:absolute;top:0;right:0;width:50px;height:100%;background:url(../../../../../images/egovframework/com/ebs/common/ico_search_v1.png) no-repeat 50% 50%;background-size:25px}
+.online_main .online_top .srch_form .srch_area .round{margin:0 5px 10px 0;vertical-align:top}
+.online_main .online_top .srch_form .srch_area .form-lg{width:200px;margin-right:0}
+.online_main .online_top .srch_form .srch_area .form-lg .nice-select.open .list{width:100%}
+.online_main .faq_wrap{margin-top:0;padding-top:30px;background-color:#fff}
+.online_main .online_class{padding:50px 0 45px;background-color:#f3f0f7}
+.online_main .online_class .sec_class{padding-bottom:55px}
+.online_main .online_class .sec_class > dt{width:180px;height:44px;margin:0 auto;color:#fff;font-size:22px;font-weight:500;line-height:44px;text-align:center;border-radius:22px;background-color:#7232d8}
+.online_main .online_class .sec_class > dd{min-height:111px;margin-top:15px}
+.online_main .online_class .sec_class > dd .list > li{border:1px solid #e6e6e6;border-top:none;background-color:#fff}
+.online_main .online_class .sec_class > dd .list > li:first-child{border-top:1px solid #e6e6e6}
+.online_main .online_class .sec_class > dd .list > li > a{display:block;overflow:hidden;position:relative;padding:13px 45px 14px 22px;color:#191919;font-size:18px;font-weight:500;line-height:150%;text-overflow:ellipsis;white-space:nowrap}
+.online_main .online_class .sec_class > dd .list > li > a i{position:absolute;top:50%;right:15px;margin-top:-12px;color:#333}
+.online_main .online_class .sec_class > dd .nodata{color:#666;font-size:17px;text-align:center}
+.online_main .search_wrap{padding:43px 0 100px;text-align:center;background-color:#f3f0f7}
+.online_main .search_wrap .txt_result{color:#000;font-size:30px}
+.online_main .search_wrap .tbl_result{overflow-x:auto;margin-top:23px}
+.online_main .search_wrap .tbl_result table{width:975px;margin:0 auto;table-layout:fixed}
+.online_main .search_wrap .tbl_result table th{height:56px;padding:0 15px;color:#4c4c4c;font-size:18px;font-weight:500;border-right:1px solid #f9f9f9;background-color:#e6e6e6}
+.online_main .search_wrap .tbl_result table th:first-child, .online_main .search_wrap .tbl_result table td:first-child{border-left:1px solid #e6e6e6}
+.online_main .search_wrap .tbl_result table th:last-child{border-right-color:#e6e6e6}
+.online_main .search_wrap .tbl_result table td{height:56px;padding:0 15px;color:#191919;font-size:18px;font-weight:500;border-right:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6;background-color:#f9f9f9}
+.online_main .search_wrap .tbl_result table td a{display:inline-block;overflow:hidden;position:relative;max-width:100%;padding-right:16px;vertical-align:top;text-overflow:ellipsis;white-space:nowrap}
+.online_main .search_wrap .tbl_result table td a i{position:absolute;top:50%;right:-7px;margin-top:-12px;color:#7232d8}
+.online_main .search_wrap .tbl_result table td.nodata{height:auto;padding-top:50px;padding-bottom:50px}
+.modal-popup-group.oc_video_popup .modal-body{height:auto}
+.modal-popup-group.oc_video_popup .modal-body video{width:100%}
+.main_noti .box{background:none}
+.main_noti .ebs_main_pop_bottom{cursor: pointer; background: #000; margin: 0 auto; color:white; display: flex; justify-content: space-between; padding: 6px 10px 2px}
+.main_noti .ebs_main_pop_bottom .today_close{margin:2.5px 3px 2.5px 0}
+.main_noti .ebs_main_pop_bottom input{margin-right:5px}
+.online_faq_wrap{padding-top:30px;background-color:#fff} 
+.online_faq_wrap .tit{font-size:23px;text-align:center}
+.online_faq_wrap .tab_group{padding-top:30px}
+/* 200313 추가 : s */
+.float_banner{z-index:10;position:fixed;top:151px;right:30px;width:180px;height:180px}
+.float_banner .btn_close{position:absolute;top:16px;right:10px;width:27px;height:27px;text-indent:-9999px;background:#4d2c77 url(../../../../../images/egovframework/com/ebs/online/btn_close.png) no-repeat 50% 50%;border-radius:50%}
+.float_banner .circle{width:100%;height:100%;padding:45px 0;background:url(../../../../../images/egovframework/com/ebs/online/bg_banner.png) no-repeat 50% 50%;border-radius:50%;box-shadow:5px 5px 15px rgba(0,0,0,.3)}
+.float_banner .circle > span{display:block;color:#4d2c77;font-size:15px;text-align:center}
+.float_banner .circle > strong{display:block;width:157px;height:23px;margin:4px auto 11px;text-indent:-9999px;background:url(../../../../../images/egovframework/com/ebs/online/txt_faq.png) no-repeat 50% 50%;}
+.float_banner .circle > a{display:block;width:72px;height:26px;padding:0 13px;margin:0 auto;color: #ffd105;font-size: 13px;line-height:26px;background-color: #4d2c77;border-radius:20px}
+.online_faq_wrap.customer_wrap .faq_wrap .faq .list{display:none;border-top:0;border-bottom:1px solid #e8e8e8}
+.online_faq_wrap.customer_wrap .faq_wrap .faq{border-top:1px solid #e8e8e8}
+.online_faq_wrap.customer_wrap .faq_wrap .faq .list.top7{display:block}
+.online_faq_wrap.customer_wrap .faq_wrap .faq .list > dt > a .faq_q{width:100%;font-size:14.5px;vertical-align:middle}
+.online_faq_wrap.customer_wrap .faq_wrap .faq .list > dd{padding:6px 0 10px 17px}
+.online_faq_wrap.customer_wrap .faq_wrap .faq .list .faq_a dd{display:block;width:auto;font-size:16px}
+/* 200313 추가 : e */
+/* 200317 추가 : s */
+.online_top .tit_h2{color:#fff;font-size:36px;font-weight:300;text-align:center}
+.search_wrap .srch_area{max-width:630px;margin:0 auto;text-align:left}
+.search_wrap .srch_area .lbl_srch{padding:3px 10px;color:#7232d8;background-color:#fff;border:1px solid #7232d8;border-radius:20px}
+.search_wrap .srch_area .select_area{margin-top:15px;padding:10px;border:1px solid #7232d8}
+.search_wrap .srch_area .btn_area{margin:60px 0 40px}
+/* 200317 추가 : e */
+#mainModal_3{margin-left:0;transform:translateX(-45%)}
+
+@media (max-width:1176px){
+	.new_type.online_type #gnb > ul > li > a, .new_type.online_type #gnb > ul > li > span{font-size:17px} /* 200313 수정 */
+}
+@media (max-width:1038px){
+	.new_type.online_type #gnb > ul > li > a{padding-right:10px;padding-left:10px}
+}
+@media (max-width:1085px){
+	.online_top .step{width:603px}
+	.online_top .step > li.num03{margin-right:0}
+	.online_top .step > li.num03:after{display:none}
+	.float_banner{right:20px} /* 200313 추가 */
+}
+@media (max-width:995px){
+	#header.new_type.online_type h1{margin-top:0;padding-top:6px}
+	#mainModal_1, #mainModal_2{left:0 !important;margin-left:0}
+	.float_banner{top:120px} /* 200313 추가 */
+}
+@media (max-width:768px){
+	.online_top{padding:20px 0 25px}
+	.online_top .step{display:none}
+	.online_main .online_top .srch_form .srch_area .inp_srch,
+	.online_main .search_wrap .txt_result{font-size:22px}
+	.online_main .search_wrap .tbl_result table th, .online_main .search_wrap .tbl_result table td{font-size:16px}
+	.online_faq_wrap.customer_wrap .tab_group.tab_num4{margin-bottom:0}
+	.online_top .tit_h2{font-size:24px} /* 200317 추가 */
+}
+@media (max-width:680px){
+	.online_faq_wrap .tit{padding-top:20px;font-size:20px} /* 200313 추가 */
+}
+@media (max-width:645px){
+	.online_top .step{width:470px}
+	.online_top .step > li{width:130px;height:130px;margin-right:40px;padding-top:40px;font-size:18px}
+	.online_top .step > li:after{right:-28px}
+	.online_top .step > li .ico_login{margin-top:-3px}
+	.online_main .online_class .sec_class > dt{font-size:20px}
+	.online_main .online_class .sec_class > dd .list > li > a{font-size:16px}
+}
+@media (max-width:568px){
+	.online_main .online_top .srch_form .srch_area{padding:20px 0 0}
+	.online_main .online_top .srch_form .srch_area .lbl_srch{display:block;position:static;width:84px;margin-bottom:10px}
+}
+@media (max-width:515px){
+	.online_top .step{width:300px}
+	.online_top .step > li:nth-child(even){margin-right:0}
+	.online_top .step > li:nth-child(even):after{display:none}
+	.online_top .step > li.num03{margin-right:40px}
+	.online_top .step > li.num03:after{display:block}
+}
+@media (max-width:416px){
+	.online_type + #mobile_menu .mm_head .mm_head_mn > a{width:49%}
+}
+@media (max-width:359px){
+	.online_main .online_top .srch_form .srch_area .form-lg{width:160px}
+}
+/* 200226 온라인클래스 : e */
+
+/* 200320 온라인클래스 에러 페이지 : s */
+.error_wrap{padding:80px 0;text-align:center}
+.error_wrap .error_box{width:436px;margin:60px auto 0;padding:71px 20px 77px;color:#fff;font-size:22px;font-weight:500;line-height:1;border-radius:20px;background-color:#7232d8}
+.error_wrap .error_box i{margin-bottom:7px;font-size:70px}
+.error_wrap .error_box .btn{display:inline-block;margin-top:20px;padding:0 22px;color:#7232d8;font-size:16px;font-weight:500;line-height:36px;vertical-align:top;border-radius:20px;background-color:#fff}
+/* 200320 온라인클래스 에러 페이지 : e */
+
+/* 파이어폭스 hack */
+@-moz-document url-prefix(){
+	#header .top .my_menu .my_menu_lst .my_admin .thumb .find > i{margin-top:2px}
+	#header.new_type .top .alarm{position:relative;top:2px}
+}
+/* ie hack  */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+}
+/* edge hack  */
+@supports (-ms-ime-align:auto) {
+}
+/* 사파리 hack */
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+    }
+}}

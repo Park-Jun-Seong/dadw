@@ -1,0 +1,126 @@
+(function($) {
+
+    $.ajaxSetup({
+    	cache: false,
+    	async: true,
+    	beforeSend: function(xhr) {
+            xhr.setRequestHeader("AJAX", true);
+        },
+        error: function(xhr, status, err) {
+        	console.log(xhr);
+        	console.log(status);
+        	console.log(err);
+            if (xhr.status == 401) {
+//            	alert("401");
+            	alert("접근 권한이 없습니다.\n다시 시도해주세요.");
+            	location.reload();
+            } else if (xhr.status == 403) {
+//            	alert("403");
+            	alert("접근 권한이 없습니다.\n다시 시도해주세요.");
+            	location.reload();
+//            } else {
+//            	alert("예외가 발생했습니다. 관리자에게 문의하세요.");
+            }
+        }
+    });
+
+})(jQuery);
+
+
+//function setAjaxCsrf(){
+//	var csrfToken = $("meta[name='_csrf']").attr("content");
+//	var csrfHeader = $("meta[name='_csrf_header']").attr("content");
+//	
+//	$.ajaxPrefilter(function(options, originalOptions, jqXHR){
+//	    if (options['type'].toLowerCase() === "post") {
+//	        jqXHR.setRequestHeader( csrfHeader, csrfToken );
+//	    }
+//	});
+//	
+//	return {
+//			  csrfToken : csrfToken
+//			, csrfHeader : csrfHeader
+//			};
+//}
+
+
+/** ajax post 전송 */
+function fncPost(url, data, func){
+	try{
+		$.ajaxSettings.traditional = true;
+		
+//		setAjaxCsrf();
+		
+		$.post(url,data,function(returnData,status){
+			if(status=='success'){
+				func(returnData);	
+			}else{
+//				alert('서버에 오류가 발생했습니다.');
+			}
+		});
+	}catch(e){
+		alert(e);
+	}
+}
+
+/** ajax load */
+function fncLoad(divId, url, data, func){	
+	$.ajaxSettings.traditional = true;	
+	
+//	setAjaxCsrf();
+	
+	$(divId).load(url,data,function(returnData,status){
+		
+		if(status=='success'){			
+			if(func){
+				func();
+			}
+		}else{
+//			alert('서버에 오류가 발생했습니다.');
+		}
+	});
+}
+
+/** ajax json 전송 */
+function fncJson(url, data, func){
+	$.ajaxSettings.traditional = true;
+	
+//	setAjaxCsrf();
+	
+	$.getJSON(url,data,function(returnData,status){
+		if(status=='success'){
+			func(returnData);	
+		}else{
+//			alert('서버에 오류가 발생했습니다.');
+		}
+	});
+}
+
+function fncAjax(url, data, func){
+	
+	$.ajaxSettings.traditional = true;
+
+//	setAjaxCsrf();
+	
+	$.ajax({
+		  type: "post"
+		, url: url
+		, cache: false
+		, data: data
+//		, dataType: "json"
+		, contentType: false
+		, processData: false
+		, beforeSend: function() {
+			
+		}							
+		,error: function(request,status,error) {
+			alert('서버에 오류가 발생했습니다.');
+		}
+		,success : function(data) {
+			if(func){
+				func(data);	
+			}
+		}
+	});
+	
+}
